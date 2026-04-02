@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "servidor-http-portfolio",
+      "type": "shell",
+      "command": "python -m http.server 8080",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "focus": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
