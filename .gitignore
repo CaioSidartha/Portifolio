@@ -2,3 +2,6 @@
 Thumbs.db
 *.log
 .vscode/*.log
+
+# Acima do limite de 100 MB do GitHub — mantém localmente ou usa URL externa no HTML
+assets/drones/videofundosessao.mp4
