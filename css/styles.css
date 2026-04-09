@@ -271,25 +271,35 @@ nav.show{transform:translateY(0)}
   z-index:0;
   pointer-events:none;
 }
+.drones-yt-wrap{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  z-index:0;
+}
 .drones-video{
+  position:absolute;
+  inset:0;
   width:100%;
   height:100%;
-  object-fit:cover;
-  object-position:center;
-  transform:scale(1.04);
+  border:0;
+  pointer-events:none;
   filter:saturate(1.06) contrast(1.03);
+  transform:scale(1.12);
+  transform-origin:center center;
 }
 .drones-scrim{
   position:absolute;
   inset:0;
   z-index:1;
+  /* Véu mais translúcido para o YouTube aparecer por baixo (antes ~.93 tapava tudo) */
   background:
     linear-gradient(102deg,
-      rgba(250,247,242,.93) 0%,
-      rgba(245,240,232,.78) 26%,
-      rgba(237,231,217,.45) 46%,
-      rgba(245,240,232,.62) 64%,
-      rgba(250,247,242,.85) 100%),
+      rgba(250,247,242,.58) 0%,
+      rgba(245,240,232,.48) 26%,
+      rgba(237,231,217,.32) 46%,
+      rgba(245,240,232,.42) 64%,
+      rgba(250,247,242,.62) 100%),
     linear-gradient(185deg,
       rgba(245,240,232,.45) 0%,
       transparent 18%,
@@ -314,7 +324,7 @@ nav.show{transform:translateY(0)}
   #drones .drones-sec-title{font-size:clamp(30px,3.8vw,52px)}
 }
 @media (prefers-reduced-motion:reduce){
-  .drones-video{display:none}
+  .drones-yt-wrap{display:none}
   .drones-media{background:var(--papiro)}
 }
 
@@ -438,11 +448,13 @@ html.reduce-motion #drones:not(.drones-revealed) .drone-real-img{opacity:1}
   position:absolute;inset:0;overflow:hidden;border-radius:inherit;
 }
 .pc--aereo .pph-video{
-  width:100%;height:100%;object-fit:cover;object-position:center;
-  transform:scale(1.02);
+  position:absolute;inset:0;width:100%;height:100%;border:0;
+  pointer-events:none;
+  transform:scale(1.08);
+  transform-origin:center center;
   transition:transform .65s cubic-bezier(.22,1,.36,1);
 }
-.pc--aereo:hover .pph-video{transform:scale(1.08)}
+.pc--aereo:hover .pph-video{transform:scale(1.14)}
 .pc--aereo .pph-video-veil{
   position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(165deg,rgba(10,8,7,.38) 0%,rgba(28,22,18,.52) 100%);
