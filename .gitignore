@@ -3,5 +3,5 @@ Thumbs.db
 *.log
 .vscode/*.log
 
-# Acima do limite de 100 MB do GitHub — mantém localmente ou usa URL externa no HTML
+# Originais gigantes (>100 MB) — não commits; usa drone-fundo.mp4 comprimido no repo
 assets/drones/videofundosessao.mp4

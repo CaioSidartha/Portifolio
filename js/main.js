@@ -257,7 +257,15 @@ initIntroCurtain();
 initDroneSectionReveal();
 revealAll();
 
-/* Fundos drone: YouTube em iframe — autoplay via URL; <video>.play() não aplica */
+const dronesVideo = document.querySelector('.drones-video');
+if (dronesVideo && !prefersReducedMotion) {
+  dronesVideo.play().catch(() => {});
+}
+
+const portfolioAereoVideo = document.getElementById('portfolioAereoVideo');
+if (portfolioAereoVideo && !prefersReducedMotion) {
+  portfolioAereoVideo.play().catch(() => {});
+}
 
 /* Portfólio — cards .pc--roster: slideshow + lightbox (imagens / vídeos) */
 const rosterCarouselTimers = new WeakMap();

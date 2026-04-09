@@ -55,12 +55,11 @@
 <!-- DRONES -->
 <section id="drones">
   <div class="drones-media" aria-hidden="true">
-    <div class="drones-yt-wrap">
-      <iframe class="drones-video" title="Filmagem drone — fundo da secção" width="1280" height="720"
-        src="https://www.youtube-nocookie.com/embed/_TI-XYtPD0Q?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=_TI-XYtPD0Q&amp;controls=0&amp;modestbranding=1&amp;playsinline=1&amp;rel=0&amp;iv_load_policy=3&amp;enablejsapi=1"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+    <!-- Vídeo local: exporta comprimido (abaixo de 95 MB) para assets/drones/drone-fundo.mp4 — referência no YouTube: https://youtu.be/_TI-XYtPD0Q -->
+    <video class="drones-video" autoplay muted loop playsinline preload="auto">
+      <source src="assets/drones/drone-fundo.webm" type="video/webm">
+      <source src="assets/drones/drone-fundo.mp4" type="video/mp4">
+    </video>
     <div class="drones-scrim"></div>
   </div>
   <div class="drones-inner">
@@ -139,10 +138,10 @@
     <div class="pc pc--aereo rev">
       <div class="pph">
         <div class="pph-video-stack" aria-hidden="true">
-          <iframe id="portfolioAereoVideo" class="pph-video" title="Projeto aéreo — vídeo de fundo" width="1280" height="720"
-            src="https://www.youtube-nocookie.com/embed/_TI-XYtPD0Q?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=_TI-XYtPD0Q&amp;controls=0&amp;modestbranding=1&amp;playsinline=1&amp;rel=0&amp;iv_load_policy=3&amp;enablejsapi=1"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <video id="portfolioAereoVideo" class="pph-video" muted loop playsinline autoplay preload="auto">
+            <source src="assets/drones/drone-fundo.webm" type="video/webm">
+            <source src="assets/drones/drone-fundo.mp4" type="video/mp4">
+          </video>
           <div class="pph-video-veil"></div>
         </div>
       </div>
