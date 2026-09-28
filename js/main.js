@@ -326,6 +326,13 @@ function initMediaRoster() {
   let lastRosterCard = null;
   const thumbButtons = [];
 
+  function pulseMediaZoom(el) {
+    if (!el || prefersReducedMotion) return;
+    el.classList.remove('is-zooming');
+    void el.offsetWidth;
+    el.classList.add('is-zooming');
+  }
+
   function showSlideInModal(slide, thumbs, index) {
     thumbs.forEach((b, i) => {
       b.classList.toggle('is-picked', i === index);
@@ -335,6 +342,7 @@ function initMediaRoster() {
 
     if (type === 'video') {
       mrImg.setAttribute('hidden', '');
+      mrImg.classList.remove('is-zooming');
       mrVideo.removeAttribute('hidden');
       mrVideo.pause();
       mrVideo.innerHTML = '';
@@ -347,16 +355,19 @@ function initMediaRoster() {
       }
       mrVideo.load();
       mrVideo.play().catch(() => {});
+      pulseMediaZoom(mrVideo);
     } else {
       mrVideo.pause();
       mrVideo.innerHTML = '';
       mrVideo.setAttribute('hidden', '');
+      mrVideo.classList.remove('is-zooming');
       const simg = slide.querySelector('img');
       mrImg.removeAttribute('hidden');
       if (simg) {
         mrImg.src = simg.currentSrc || simg.src;
         mrImg.alt = simg.alt || '';
       }
+      pulseMediaZoom(mrImg);
     }
 
     const t = thumbs[index];
@@ -437,6 +448,11 @@ function initMediaRoster() {
     card.querySelectorAll('video').forEach((v) => v.pause());
 
     root.hidden = false;
+    if (!prefersReducedMotion) {
+      root.querySelector('.mr-panel')?.classList.remove('is-open-anim');
+      void root.offsetWidth;
+      root.querySelector('.mr-panel')?.classList.add('is-open-anim');
+    }
     document.body.classList.add('mr-open');
     root.querySelector('.mr-x')?.focus();
   }

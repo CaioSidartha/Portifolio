@@ -518,6 +518,9 @@ html.reduce-motion #drones:not(.drones-revealed) .drone-real-img{opacity:1}
 /* Lightbox roster — estilo “seleção” */
 .media-roster{position:fixed;inset:0;z-index:12000;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
 .media-roster[hidden]{display:none!important}
+.media-roster:not([hidden]) .mr-backdrop{animation:mrBackdropIn .32s ease both}
+.media-roster:not([hidden]) .mr-panel.is-open-anim,
+.media-roster:not([hidden]) .mr-panel{animation:mrPanelZoomIn .42s cubic-bezier(.22,1,.36,1) both}
 .mr-backdrop{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 40%,rgba(8,10,14,.78),rgba(4,5,8,.96));backdrop-filter:blur(10px);cursor:pointer}
 .mr-panel{
   position:relative;z-index:1;width:min(1040px,100%);max-height:min(92vh,900px);
@@ -527,6 +530,19 @@ html.reduce-motion #drones:not(.drones-revealed) .drone-real-img{opacity:1}
   border-radius:16px;
   box-shadow:0 0 0 1px rgba(0,0,0,.5),0 32px 80px rgba(0,0,0,.65),0 0 60px rgba(100,160,220,.08);
   padding:20px 22px 18px;
+  transform-origin:center center;
+}
+@keyframes mrBackdropIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+@keyframes mrPanelZoomIn{
+  from{opacity:0;transform:scale(.88) translateY(18px)}
+  to{opacity:1;transform:scale(1) translateY(0)}
+}
+@keyframes mrMediaZoomIn{
+  from{opacity:.35;transform:scale(.92)}
+  to{opacity:1;transform:scale(1)}
 }
 .mr-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
 .mr-title{
@@ -545,7 +561,8 @@ html.reduce-motion #drones:not(.drones-revealed) .drone-real-img{opacity:1}
   border:1px solid rgba(255,255,255,.08);
   box-shadow:inset 0 0 0 1px rgba(0,0,0,.4);
 }
-.mr-img,.mr-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center top;background:#050608}
+.mr-img,.mr-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center top;background:#050608;transform-origin:center center}
+.mr-img.is-zooming,.mr-video.is-zooming{animation:mrMediaZoomIn .48s cubic-bezier(.22,1,.36,1) both}
 .mr-video{z-index:1}
 .mr-strip-label{
   font-family:var(--fm);font-size:7px;letter-spacing:.32em;text-transform:uppercase;
@@ -629,6 +646,10 @@ body.mr-open{overflow:hidden}
   .mr-thumb-skin{transform:none}
   .mr-thumb-imgwrap{width:100%;left:0;transform:none}
   .mr-thumb:hover .mr-thumb-skin::before{opacity:0}
+  .media-roster:not([hidden]) .mr-backdrop,
+  .media-roster:not([hidden]) .mr-panel,
+  .mr-img.is-zooming,
+  .mr-video.is-zooming{animation:none!important}
 }
 
 /* ══════════════════════════════════════════
