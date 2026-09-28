@@ -287,21 +287,21 @@ nav.show{transform:translateY(0)}
   z-index:1;
   background:
     linear-gradient(102deg,
-      rgba(250,247,242,.82) 0%,
-      rgba(245,240,232,.68) 26%,
-      rgba(237,231,217,.4) 46%,
-      rgba(245,240,232,.55) 64%,
-      rgba(250,247,242,.78) 100%),
+      rgba(250,247,242,.62) 0%,
+      rgba(245,240,232,.48) 26%,
+      rgba(237,231,217,.28) 46%,
+      rgba(245,240,232,.38) 64%,
+      rgba(250,247,242,.55) 100%),
     linear-gradient(185deg,
-      rgba(245,240,232,.45) 0%,
+      rgba(245,240,232,.28) 0%,
       transparent 18%,
       transparent 82%,
-      rgba(28,22,18,.1) 100%),
+      rgba(28,22,18,.08) 100%),
     radial-gradient(ellipse 85% 65% at 88% 42%,
-      rgba(232,98,42,.09) 0%,
+      rgba(232,98,42,.08) 0%,
       transparent 52%),
     radial-gradient(ellipse 50% 45% at 12% 88%,
-      rgba(74,144,184,.07) 0%,
+      rgba(74,144,184,.06) 0%,
       transparent 50%);
   pointer-events:none;
 }
@@ -316,8 +316,7 @@ nav.show{transform:translateY(0)}
   #drones .drones-sec-title{font-size:clamp(30px,3.8vw,52px)}
 }
 @media (prefers-reduced-motion:reduce){
-  .drones-video{display:none}
-  .drones-media{background:var(--papiro)}
+  /* Mantém o vídeo de fundo visível — só as animações GSAP/scroll param via .reduce-motion */
 }
 
 .sec-tag{font-family:var(--fm);font-size:10px;letter-spacing:.45em;text-transform:uppercase;color:var(--coral);display:flex;align-items:center;gap:14px;margin-bottom:14px}
@@ -464,11 +463,7 @@ html.reduce-motion #drones:not(.drones-revealed) .drone-real-img{opacity:1}
     linear-gradient(0deg,rgba(28,22,18,.68),rgba(28,22,18,.06) 50%,transparent);
 }
 .pov--aereo > div{position:relative;z-index:1;text-shadow:0 2px 24px rgba(0,0,0,.45)}
-@media (prefers-reduced-motion:reduce){
-  .pc--aereo .pph-video{display:none}
-  .pc--aereo .pph-video-stack{background:linear-gradient(145deg,#1c1618,#2a2420)}
-  .pc--aereo:hover .pph-video{transform:none}
-}
+/* reduce-motion: vídeos de fundo do portfólio continuam visíveis */
 .pbar{position:absolute;bottom:0;left:0;right:0;height:2px;transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
 .pc:hover .pbar{transform:scaleX(1)}
 .pov{position:absolute;inset:0;z-index:2;background:linear-gradient(0deg,rgba(28,22,18,.94),rgba(28,22,18,.1) 55%,transparent);display:flex;align-items:flex-end;padding:24px;opacity:0;transform:translateY(6px);transition:all .4s ease}

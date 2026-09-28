@@ -258,12 +258,14 @@ initDroneSectionReveal();
 revealAll();
 
 const dronesVideo = document.querySelector('.drones-video');
-if (dronesVideo && !prefersReducedMotion) {
+if (dronesVideo) {
+  dronesVideo.muted = true;
   dronesVideo.play().catch(() => {});
 }
 
 const portfolioAereoVideo = document.getElementById('portfolioAereoVideo');
-if (portfolioAereoVideo && !prefersReducedMotion) {
+if (portfolioAereoVideo) {
+  portfolioAereoVideo.muted = true;
   portfolioAereoVideo.play().catch(() => {});
 }
 
