@@ -6,7 +6,7 @@
 <title>Caio Sidartha — Portfólio</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="css/styles.css?v=drone2">
+<link rel="stylesheet" href="css/styles.css?v=portfolio3">
 </head>
 <body>
 
@@ -56,7 +56,7 @@
 <section id="drones">
   <div class="drones-media" aria-hidden="true">
     <!-- Vídeo local: exporta comprimido (abaixo de 95 MB) para assets/drones/drone-fundo.mp4 — referência no YouTube: https://youtu.be/_TI-XYtPD0Q -->
-    <video class="drones-video" autoplay muted loop playsinline preload="auto">
+    <video class="drones-video" autoplay muted loop playsinline preload="auto" poster="assets/drones/drone-fundo-poster.jpg">
       <source src="assets/drones/drone-fundo.mp4" type="video/mp4">
     </video>
     <div class="drones-scrim"></div>
@@ -137,7 +137,8 @@
     <div class="pc pc--aereo rev">
       <div class="pph">
         <div class="pph-video-stack" aria-hidden="true">
-          <video id="portfolioAereoVideo" class="pph-video" muted loop playsinline autoplay preload="auto">
+          <video id="portfolioAereoVideo" class="pph-video" muted loop playsinline autoplay preload="auto"
+            poster="assets/drones/drone-fundo-poster.jpg">
             <source src="assets/drones/drone-fundo.mp4" type="video/mp4">
           </video>
           <div class="pph-video-veil"></div>
@@ -160,9 +161,46 @@
       <div class="pbar" style="background:var(--coral)"></div>
       <div class="pov"><div><div class="pcat" style="color:rgba(232,98,42,.8)">Full Stack</div><div class="ptit">SISTEMA WEB</div><div class="pov-hint">Clique para abrir a galeria</div></div></div>
     </div>
-    <div class="pc rev"><div class="pph"><i class="pph-i fas fa-video"></i><span class="pph-p">imagens/portfolio/projeto3.jpg</span></div><div class="pbar" style="background:var(--musgo)"></div><div class="pov"><div><div class="pcat" style="color:rgba(90,122,74,.8)">Edição de Vídeo</div><div class="ptit">SHOW NOTURNO</div></div></div></div>
-    <div class="pc rev"><div class="pph"><i class="pph-i fas fa-palette"></i><span class="pph-p">imagens/portfolio/projeto4.jpg</span></div><div class="pbar" style="background:var(--areia)"></div><div class="pov"><div><div class="pcat" style="color:rgba(201,169,122,.8)">Web Design</div><div class="ptit">LANDING PAGE</div></div></div></div>
-    <div class="pc rev"><div class="pph"><i class="pph-i fas fa-mountain"></i><span class="pph-p">imagens/portfolio/projeto5.jpg</span></div><div class="pbar" style="background:var(--azul)"></div><div class="pov"><div><div class="pcat" style="color:rgba(184,216,234,.7)">Filmagem Aérea</div><div class="ptit">VISTA PANORÂMICA</div></div></div></div>
+    <div class="pc pc--roster rev" tabindex="0" data-roster-label="Painel de monitoramento de operadores — galeria" aria-label="Abrir galeria do painel de operações">
+      <div class="pph pph-roster">
+        <div class="pg-slides" aria-hidden="true">
+          <figure class="pg-slide on" data-type="image"><img src="assets/MonitorOps/equipe.png" alt="Monitoramento ao vivo da equipe e feed da operação" loading="lazy" decoding="async"></figure>
+          <figure class="pg-slide" data-type="image"><img src="assets/MonitorOps/relatorio-privado.png" alt="Relatório gerencial — valores financeiros ocultados" loading="lazy" decoding="async"></figure>
+        </div>
+        <div class="pg-chrome" aria-hidden="true"><span class="pg-chrome-l"></span><span class="pg-chrome-r"></span></div>
+        <div class="pg-frame"></div>
+      </div>
+      <div class="pbar" style="background:var(--musgo)"></div>
+      <div class="pov"><div><div class="pcat" style="color:rgba(90,122,74,.85)">Full Stack · CRM</div><div class="ptit">PAINEL DE OPERAÇÕES</div><div class="pov-hint">Clique para abrir a galeria</div></div></div>
+    </div>
+    <div class="pc pc--roster rev" tabindex="0" data-roster-label="Despacho · Integração Drive → Banco — galeria" aria-label="Abrir galeria do Despacho">
+      <div class="pph pph-roster">
+        <div class="pg-slides" aria-hidden="true">
+          <figure class="pg-slide on" data-type="image"><img src="assets/Despacho/empresas.png" alt="Painel Despacho — empresas, pastas do Drive e tabelas MySQL" loading="lazy" decoding="async"></figure>
+          <figure class="pg-slide" data-type="image"><img src="assets/Despacho/historico-faturamento.png" alt="Histórico de planilhas processadas e enviadas ao MySQL" loading="lazy" decoding="async"></figure>
+        </div>
+        <div class="pg-chrome" aria-hidden="true"><span class="pg-chrome-l"></span><span class="pg-chrome-r"></span></div>
+        <div class="pg-frame"></div>
+      </div>
+      <div class="pbar" style="background:var(--areia)"></div>
+      <div class="pov"><div><div class="pcat" style="color:rgba(201,169,122,.85)">ETL · Integração</div><div class="ptit">DESPACHO · DRIVE → BANCO</div><div class="pov-hint">Clique para abrir a galeria</div></div></div>
+    </div>
+    <div class="pc pc--roster pc--mobile-shots rev" tabindex="0" data-roster-label="Prescrição e entrega de refeições clínicas — galeria" aria-label="Abrir galeria do sistema de refeições clínicas">
+      <div class="pph pph-roster">
+        <div class="pg-slides" aria-hidden="true">
+          <figure class="pg-slide on" data-type="image"><img src="assets/ClinicaRefeicoes/01-dashboard.png" alt="Dashboard — pacientes internados e status de dietas" loading="lazy" decoding="async"></figure>
+          <figure class="pg-slide" data-type="image"><img src="assets/ClinicaRefeicoes/02-acoes-rapidas.png" alt="Ações rápidas — mapa, cadastro, prescrição e aprovação" loading="lazy" decoding="async"></figure>
+          <figure class="pg-slide" data-type="image"><img src="assets/ClinicaRefeicoes/03-mapa-alas.png" alt="Mapa do hospital — seleção de alas" loading="lazy" decoding="async"></figure>
+          <figure class="pg-slide" data-type="image"><img src="assets/ClinicaRefeicoes/04-upa-salas.png" alt="UPA — seleção de salas e ocupação" loading="lazy" decoding="async"></figure>
+          <figure class="pg-slide" data-type="image"><img src="assets/ClinicaRefeicoes/05-leitos.png" alt="Gestão de leitos — livres e ocupados" loading="lazy" decoding="async"></figure>
+          <figure class="pg-slide" data-type="image"><img src="assets/ClinicaRefeicoes/06-prescricao.png" alt="Ficha do paciente com alergias e última prescrição aprovada" loading="lazy" decoding="async"></figure>
+        </div>
+        <div class="pg-chrome" aria-hidden="true"><span class="pg-chrome-l"></span><span class="pg-chrome-r"></span></div>
+        <div class="pg-frame"></div>
+      </div>
+      <div class="pbar" style="background:var(--azul)"></div>
+      <div class="pov"><div><div class="pcat" style="color:rgba(184,216,234,.75)">Healthtech · Mobile</div><div class="ptit">REFEIÇÕES CLÍNICAS</div><div class="pov-hint">Clique para abrir a galeria</div></div></div>
+    </div>
     <div class="pc pc--roster rev" tabindex="0" data-roster-label="App corporativo — galeria" aria-label="Abrir galeria do app corporativo">
       <div class="pph pph-roster">
         <div class="pg-slides" aria-hidden="true">
@@ -308,6 +346,6 @@
 </div>
 
 <script src="js/gsap.min.js"></script>
-<script src="js/main.js?v=drone2" defer></script>
+<script src="js/main.js?v=portfolio3" defer></script>
 </body>
 </html>

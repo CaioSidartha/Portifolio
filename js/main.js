@@ -257,17 +257,26 @@ initIntroCurtain();
 initDroneSectionReveal();
 revealAll();
 
-const dronesVideo = document.querySelector('.drones-video');
-if (dronesVideo) {
-  dronesVideo.muted = true;
-  dronesVideo.play().catch(() => {});
+function ensureBgVideo(el) {
+  if (!el) return;
+  el.muted = true;
+  el.setAttribute('playsinline', '');
+  const tryPlay = () => el.play().catch(() => {});
+  tryPlay();
+  el.addEventListener('canplay', tryPlay, { once: true });
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) tryPlay();
+        else el.pause();
+      });
+    }, { threshold: 0.15 });
+    io.observe(el);
+  }
 }
 
-const portfolioAereoVideo = document.getElementById('portfolioAereoVideo');
-if (portfolioAereoVideo) {
-  portfolioAereoVideo.muted = true;
-  portfolioAereoVideo.play().catch(() => {});
-}
+ensureBgVideo(document.querySelector('.drones-video'));
+ensureBgVideo(document.getElementById('portfolioAereoVideo'));
 
 /* Portfólio — cards .pc--roster: slideshow + lightbox (imagens / vídeos) */
 const rosterCarouselTimers = new WeakMap();
